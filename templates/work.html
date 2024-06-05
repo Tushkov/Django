@@ -5,9 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work</title>
+
+    <style>
+        ul li {
+            display: inline;
+            padding-right: 50px;
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/countries_list">Список городов</a></li>
+            <li><a href="/work">Work</a></li>
+        </ul>
+        <hr />
+    </header>
     {% for item in work %}
     <li><a href="/country/{{ item.country }}">{{ item.organization }} {{ item.duties }}</a></li>
     {% endfor %}
