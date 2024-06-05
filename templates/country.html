@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru-ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара</title>
+</head>
+<body>
+    <div>Меню: <a href="/"> Home</a> / <a href="/countries_list">Items</a> / <a href="/about">About </a></div>
+    <h1>{{ item.country }}</h1>
+    <ol>
+        {% for language in item.languages %}
+            <li>{{ language }}</li>
+        {% endfor %}
+    </ol>
+    <a href="/countries_list">К списку стран</a>
+</body>
+</html>
