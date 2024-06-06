@@ -1,0 +1,13 @@
+ul li {
+    display: inline;
+    padding-right: 50px;
+}
+
+.color_class {
+    width: 1em;
+    height: 1em;
+    border: #000 1px solid;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}

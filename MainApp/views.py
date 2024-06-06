@@ -3,14 +3,16 @@ from django.shortcuts import render
 from django.http import response
 import json
 from django.conf import settings
-from MainApp.models import Work, Item, Country
+from MainApp.models import Work, Item, Country, Color
+import random
 
 file = open(settings.BASE_DIR / "country.json")
 data = json.load(file)
 file.close()
 
-for item in data:
-    country = Country(country=item["country"], languages=1)
+#for item in Item.objects.all():
+    #item.colors.add(Color.objects.get(id=random.randint(1,7)))
+    #item.save()
 
 
 # Create a JSON data dictionary
@@ -111,7 +113,8 @@ def item_id(request, id):
         return HttpResponseNotFound(f"Товар ID = {id} не найден")
     else:
         context = {
-            "item" : item
+            "item" : item,
+            "colors": item.colors.all()
         }
     
     return render(request, "item.html", context)

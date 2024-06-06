@@ -2,12 +2,15 @@
 
 {% block content %}
 <h1>{{ item.name }}</h1>
-<h3>Бренд: {{ item.brand }}</h3>
-<h3>{% if item.count == 0 %}
-    Товар отсутствует
-    {% else %}
-    Количество: {{ item.count }} ед.
-    {% endif %}
+<h3>Бренд: «{{ item.brand }}»</h3>
+{% if item.count == 0 %}
+<h3>Товар отсутствует</h3>
+{% else %}
+<h3>Количество: {{ item.count }} ед.</h3>
+<h3>Цвета: {% for color in colors %}
+    <div class="color_class" style="background-color: {{ color.html }}" ;></div>
+    {% endfor %}
+</h3>
 </h3>
 <h3>{% if item.description == "" %}
     Описание отсутствует
@@ -15,4 +18,5 @@
     Описание: {{ item.description }}
     {% endif %}
 </h3>
+{% endif %}
 {% endblock %}

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru-ru">
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Contries</title>
     {% block style %}
-    <link rel="stylesheet" href="default.css">
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'default.css' %}">
     {% endblock %}
 </head>
 
