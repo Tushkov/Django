@@ -1,0 +1,11 @@
+  GNU nano 7.2                                              /home/user/.gitexcludes                                                       
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+*.pyc
+*venv/
+.idea/
+.vscode/
+db.*
+.mypy_cache/
