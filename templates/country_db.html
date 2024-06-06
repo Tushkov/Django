@@ -7,5 +7,5 @@
     <li>{{ language }}</li>
     {% endfor %}
 </ol>
-<a href="/countries_list_db">К списку стран</a>
-{% block content %}
+<a href="{% url 'countries-list-db' %}">К списку стран</a>
+{% endblock %}

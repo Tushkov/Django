@@ -4,7 +4,7 @@
 <h1>Список стран</h1>
 <ol>
     {% for item in items %}
-    <li><a href="/country/{{ item.country }}">{{ item.country }}</a></li>
+    <li><a href="{% url 'country-detail' item.country %}">{{ item.country }}</a></li>
     {% endfor %}
 </ol>
 {% endblock %}
