@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Contries</title>
-    <style>
-        ul li {
-            display: inline;
-            padding-right: 50px;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <ul>
-            <li><strong>Home</strong></li>
-            <li><a href="/work">Work</a></li>
-            <li><a href="/countries_list">Список стран Json</a></li>
-            <li><a href="/#countries_list_db">Список стран БД</a></li>
-            <li><a href="/items">Список товаров БД</a></li>
-        </ul>
-        <hr />
-    </header>
-
-    <h1>Произвольное приветствие</h1>
-    <p><a href="/reloab_DB">Очистка БД и загрузка</a> стран из country-by-languages.json на
-        страницу стран</p>
-</body>
-
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<h1>Произвольное приветствие</h1>
+<span style="color:blue">Имя {{name}}. Почта: {{ email }} </span>
+<p><a href="/reloab_DB">Очистка БД и загрузка</a> стран из country-by-languages.json на
+    страницу стран</p>
+{% endblock %}

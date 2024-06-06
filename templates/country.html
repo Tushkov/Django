@@ -1,36 +1,11 @@
-<!DOCTYPE html>
-<html lang="ru-ru">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Карточка товара</title>
-    <style>
-        ul li {
-            display: inline;
-            padding-right: 50px;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/work">Work</a></li>
-            <li><a href="/countries_list">Список стран Json</a></li>
-            <li><a href="/#countries_list_db">Список стран БД</a></li>
-            <li><a href="/items">Список товаров БД</a></li>
-        </ul>
-        <hr />
-    </header>
-    <h1>{{ item.country }}</h1>
-    <ol>
-        {% for language in item.languages %}
-        <li>{{ language }}</li>
-        {% endfor %}
-    </ol>
-    <a href="/countries_list">К списку стран</a>
-</body>
-
-</html>
+{% block content %}
+<h1>{{ item.country }}</h1>
+<ol>
+    {% for language in item.languages %}
+    <li>{{ language }}</li>
+    {% endfor %}
+</ol>
+<a href="/countries_list">К списку стран</a>
+{% endblock %}

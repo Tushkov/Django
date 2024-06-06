@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Contries</title>
+    {% block style %}
+    <link rel="stylesheet" href="default.css">
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        {% include "inc-menu.html" %}
+    </header>
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
