@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 from django.http import response
 import json
-from Django import settings
+from django.conf import settings
 from MainApp.models import Work, Item, Country
 
 file = open(settings.BASE_DIR / "country.json")
