@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Произвольное приветствие</h1>
-<span style="color:blue">Имя {{name}}. Почта: {{ email }} </span>
+<span style="color:blue">{{user.surname}} {{user.name}} {{user.middle}}.<br />Почта: {{ user.email }} </span>
 <p><a href="/reloab_DB">Очистка БД и загрузка</a> стран из country-by-languages.json на
     страницу стран</p>
 {% endblock %}

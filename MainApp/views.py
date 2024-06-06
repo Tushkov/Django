@@ -23,27 +23,29 @@ country =  {
             "Spanish"
         ]
     }
-
-
-
-
-
-             
-# Create your views here.
-def home(request):
-    # text = """
-    # <h1>"Изучаем django День первый !"</h1>
-    # <strong>Автор</strong>: <i>Иванов И.П.</i>
-    # <h2><a href="/about">About</a></h2>
-    # <h2><a href="/items">Items<a></h2>
-    # """
-    # return HttpResponse(text)
-    context = {
-        "name": "Петров Николай Петрович",
+userData = {
+        "surname": "Петров",
+        "name": "Николай",
+        "middlename": "Петрович",
+        "phone": "8(923)600-0102",
         "email": "my_mail@mail.ru"
     }
 
+
+# Create your views here.
+def home(request):
+    context = {
+        "user" : userData
+    }
+ 
     return render(request, "index.html", context)
+
+def about(request):
+    context = {
+        "user" : userData
+    }
+ 
+    return render(request, "about.html", context)
 
 def countries_list(request):
     context = {

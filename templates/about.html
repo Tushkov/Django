@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p><strong>Фамилия:</strong> {{ user.surname }}</p>
+<p><strong>Имя:</strong> {{ user.name }}</p>
+<p><strong>Отчество:</strong> {{ user.middlename }}</p>
+<p><strong>Телефон:</strong> {{ user.phone }}</p>
+<p><strong>E-mail:</strong> {{ user.email }}</p>
+{% endblock %}
