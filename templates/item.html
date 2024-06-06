@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Карточка товара</title>
+    <title>Товар</title>
     <style>
         ul li {
             display: inline;
@@ -24,13 +24,21 @@
         </ul>
         <hr />
     </header>
-    <h1>{{ item.country }}</h1>
-    <ol>
-        {% for language in item.languages %}
-        <li>{{ language }}</li>
-        {% endfor %}
-    </ol>
-    <a href="/countries_list">К списку стран</a>
+
+    <h1>{{ item.name }}</h1>
+    <h3>Бренд: {{ item.brand }}</h3>
+    <h3>{% if item.count == 0 %}
+        Товар отсутствует
+        {% else %}
+        Количество: {{ item.count }} ед.
+        {% endif %}
+    </h3>
+    <h3>{% if item.description == "" %}
+        Описание отсутствует
+        {% else %}
+        Описание: {{ item.description }}
+        {% endif %}
+    </h3>
 </body>
 
 </html>

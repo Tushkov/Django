@@ -4,6 +4,7 @@ class Item(models.Model):
     name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
     count = models.PositiveBigIntegerField()
+    description = models.CharField(verbose_name='Описание', max_length=500, blank=True)
 
 class Work(models.Model):
     organization = models.CharField(verbose_name='Организация', max_length=32)
@@ -12,3 +13,8 @@ class Work(models.Model):
     position = models.CharField(verbose_name='Должность', max_length=16)
     duties = models.TextField(verbose_name='Обязанности')
     period = models.PositiveIntegerField(verbose_name='Время работы', default=1)
+
+class Country(models.Model):
+    country = models.CharField(max_length=100)
+    languages = models.CharField(max_length=100)
+

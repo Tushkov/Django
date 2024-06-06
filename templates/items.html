@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Карточка товара</title>
+    <title>Список товаров БД</title>
     <style>
-        ul li {
+        .menu li {
             display: inline;
             padding-right: 50px;
         }
@@ -15,22 +15,24 @@
 
 <body>
     <header>
-        <ul>
+        <ul class="menu">
             <li><a href="/">Home</a></li>
             <li><a href="/work">Work</a></li>
             <li><a href="/countries_list">Список стран Json</a></li>
             <li><a href="/#countries_list_db">Список стран БД</a></li>
-            <li><a href="/items">Список товаров БД</a></li>
+            <li><strong>Список товаров БД</strong></li>
         </ul>
         <hr />
     </header>
-    <h1>{{ item.country }}</h1>
-    <ol>
-        {% for language in item.languages %}
-        <li>{{ language }}</li>
-        {% endfor %}
-    </ol>
-    <a href="/countries_list">К списку стран</a>
+    {% for item in items %}
+    <div style="display:inline-table; width: 200px; height: 200px; border: 1px solid; padding: 5px;">
+        <p><strong><a href="/item/{{ item.id }}">{{ item.name }} '{{ item.brand }}'</a></strong></p>
+        {% if item.description != "" %}
+        <p>{{ item.description }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+
 </body>
 
 </html>
